@@ -30,7 +30,7 @@ namespace MerchandiseSystem.Models
             return listOnOffer;
         }
 
-        public bool AddProduct(string merchCode, string product, double price, double discount, bool secondDiscount)
+        public bool AddProduct(string merchCode, string product, double price, bool secondDiscount, double discount = 0)
         {
             if(GetMerchandise(merchCode) == null)
             {
@@ -43,7 +43,7 @@ namespace MerchandiseSystem.Models
             }
         }
 
-        public bool AddService(string merchCode, string service, double budget, double discount, bool onOffer)
+        public bool AddService(string merchCode, string service, double budget, bool onOffer, double discount = 0)
         {
             if(GetMerchandise(merchCode) == null){
                 listMerchandise.Add(new Service(merchCode, service, budget, discount, onOffer));
